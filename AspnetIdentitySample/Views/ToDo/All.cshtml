@@ -1,0 +1,32 @@
+﻿@using ToDoManager.Models
+@model IEnumerable<ToDoModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>List of ToDoes</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsDone)
+        </th>
+    </tr>
+
+    @foreach (ToDoModel item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsDone)
+            </td>
+        </tr>
+    }
+
+</table>
